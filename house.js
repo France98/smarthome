@@ -39,7 +39,7 @@ $(document).ready(function () {
             url: link
         }).done(function(data){
             var code = data.split("-")
-            
+
             console.log($('#num').text(code[3]))
             console.log($('#temp').text(code[4]))
             $('#temp').val(data);
