@@ -2,10 +2,11 @@ $(document).ready(function () {
     var link = "http://158.108.165.223/data/CEEDney"
 
     $('#light').click(function () {
-        var open = console.log("1");
+        var open = "1";
         $.ajax({
             url: link + "set/" + open
         }).done(function () {
+            console.log(open)
             console.log("Done");
         }).fail(function () {
             console.log("Failed");
@@ -13,10 +14,11 @@ $(document).ready(function () {
     });
 
     $('#air').click(function () {
-        var open = console.log("1");
+        var open = "01";
         $.ajax({
             url: link + "set/" + open
         }).done(function () {
+            console.log(open)
             console.log("Done");
         }).fail(function () {
             console.log("Failed");
@@ -24,10 +26,11 @@ $(document).ready(function () {
     });
 
     $('#door').click(function () {
-        var open = console.log("1");
+        var open = "001"
         $.ajax({
             url: link + "set/" + open
-        }).done(function () {
+        }).done(function () {      
+            console.log(open)
             console.log("Done");
         }).fail(function () {
             console.log("Failed");
@@ -39,7 +42,7 @@ $(document).ready(function () {
             url: link
         }).done(function(data){
             var code = data.split("-")
-            
+
             console.log($('#num').text(code[3]))
             console.log($('#temp').text(code[4]))
             console.log($('#inten').text(code[5]))
