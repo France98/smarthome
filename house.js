@@ -2,9 +2,9 @@ $(document).ready(function () {
     var link = "http://158.108.165.223/data/CEEDney"
 
     $('#light').click(function () {
-        var message = console.log("1");
+        var open = console.log("1");
         $.ajax({
-            url: link + "set/" + message
+            url: link + "set/" + open
         }).done(function () {
             console.log("Done");
         }).fail(function () {
@@ -13,9 +13,9 @@ $(document).ready(function () {
     });
 
     $('#air').click(function () {
-        var message = console.log("2");
+        var open = console.log("1");
         $.ajax({
-            url: link + "set/" + message
+            url: link + "set/" + open
         }).done(function () {
             console.log("Done");
         }).fail(function () {
@@ -24,9 +24,9 @@ $(document).ready(function () {
     });
 
     $('#door').click(function () {
-        var message = console.log("3");
+        var open = console.log("1");
         $.ajax({
-            url: link + "set/" + message
+            url: link + "set/" + open
         }).done(function () {
             console.log("Done");
         }).fail(function () {
@@ -34,13 +34,14 @@ $(document).ready(function () {
         });
     });
 
-    var num = "";
     setInterval(function(){
         $.ajax({
             url: link
         }).done(function(data){
-            console.log($('#num').text(data))
-            console.log($('#temp').text(data))
+            var code = data.split("-")
+            
+            console.log($('#num').text(code[3]))
+            console.log($('#temp').text(code[4]))
             $('#temp').val(data);
         }).fail(function(data){
             console.error("failed");
