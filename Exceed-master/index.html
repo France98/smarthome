@@ -7,6 +7,7 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
     crossorigin="anonymous">
+  <link rel="stylesheet" href="animate.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,9 +46,15 @@
     <h2 style=" font-size: 50">iMushroom</h2>
   </div>
   <div class="col-md-4" id="tab">
-    <div id="btton" class="btn-group ; col-md-3" style="text-align: center" role="group" aria-label="...">
-      <div>
-        <button id="def" type="button" class="btn btn-default">Temperature<p id="tem"> </p></button>
+
+
+        <button id="def" type="button" class="btn btn-default" style="float: left">Temperature   <p id="tem"> </p></button>
+        <div style="padding-left: 10px">
+      <div class="progress progress-bar-vertical">
+        <div class="progress-bar progress-bar-danger progress-bar-striped" style="height: 60%;">
+          <span class="sr-only">60% Complete</span>
+        </div>
+        </div>
       </div>
       <br></br>
       <div>
@@ -79,11 +86,6 @@
         <button type="button" class="btn btn-default">Low</button>
         <button type="button" class="btn btn-default">Middle</button>
         <button type="button" class="btn btn-default">High</button>
-      </div>
-
-      <div class="range-slider">
-        <input class="range-slider__range" type="range" value="100" min="0" max="500">
-        <span class="range-slider__value">0</span>
       </div>
 
 

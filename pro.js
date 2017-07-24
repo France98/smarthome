@@ -1,6 +1,13 @@
 $(document).ready(function () {
     var link = "http://158.108.165.223/data/CEEDney/"
-    
+    $('#progress').hide();
+
+    $('#def').mousedown(function () {
+        $('#progress').show();
+    });
+    $('#def').mouseup(function () {
+        $('#progress').hide();
+    });
 
 
     $('#fan').click(function () {
@@ -59,24 +66,24 @@ $(document).ready(function () {
             console.log($('#tem').text(code[0]));
             console.log($('#light').text(code[1]));
             console.log($('#moist').text(code[3]));
-            var distance = code[2] / 29.1 /2; //centimeter
-            var volume = (Math.PI * Math.pow(3,2)) * 22.5
+            var distance = code[2] / 29.1 / 2; //centimeter
+            var volume = (Math.PI * Math.pow(3, 2)) * 22.5
             if (code[4] === 1) {
                 console.log($('#servo').text("Open"));
             } else {
                 console.log($('#servo').text("Close"));
             }
-            if(code[3]>=25 && code[3]<=34){
+            if (code[3] >= 25 && code[3] <= 34) {
                 console.log($('#talk').text("สบายจังเลย"));
-            }else{
+            } else {
                 console.log($('#talk').text("ไม่สบายแล้วนะ"));
             }
-            if (distance === 0 ) {
+            if (distance === 0) {
                 console.log($('#tank').text("Full"));
-            }else if(distance >= 15){
+            } else if (distance >= 15) {
                 console.log($('#talk').text("น้ำน้อยแล้วนะจ้ะ"));
                 console.log($('#tank').text(volume));
-            }else{
+            } else {
                 console.log($('#talk').text("ยังมีน้ำในถังนะ"));
                 console.log($('#tank').text(volume));
             }
