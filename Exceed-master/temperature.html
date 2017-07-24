@@ -16,6 +16,55 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="pro.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+                title: {
+                    text: "Temperature from last week"
+                },
+                legend: {
+                    maxWidth: 350,
+                    itemWidth: 120
+                },
+                data: [{
+                    type: "pie",
+                    showInLegend: true,
+                    legendText: "{indexLabel}",
+                    dataPoints: [{
+                            y: 4181563,
+                            indexLabel: "Day1"
+                        },
+                        {
+                            y: 2175498,
+                            indexLabel: "Day2"
+                        },
+                        {
+                            y: 3125844,
+                            indexLabel: "Day3"
+                        },
+                        {
+                            y: 1176121,
+                            indexLabel: "Day4"
+                        },
+                        {
+                            y: 1727161,
+                            indexLabel: "Day5"
+                        },
+                        {
+                            y: 4303364,
+                            indexLabel: "Day6"
+                        },
+                        {
+                            y: 1717786,
+                            indexLabel: "Day7"
+                        }
+                    ]
+                }]
+            });
+            chart.render();
+        }
+    </script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 
 <body>
@@ -25,11 +74,11 @@
     <br></br>
     <div id="btton" class="btn-group ; col-md-3" style="text-align: center" role="group" aria-label="...">
         <div>
-            <a href="project.html"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></button></a>
+            <a href="index.html"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></button></a>
         </div>
         <br></br>
         <div>
-            <a href="temperature.html"><button type="button" class="btn btn-default">Temperature <textfield id="tem"> </textfield></button></a>
+            <a href="lightinten.html"><button type="button" class="btn btn-default"><p id="light">Light</p></button></a>
         </div>
         <br></br>
         <div>
@@ -42,7 +91,7 @@
     </div>
     <div class="col-md-9" style="text-align: center" role="group">
 
-        <p style="font-size: 100">ความเข้มแสงเว้ยย</p>
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
         <br></br>
         <div style="text-align: right">
             <button type="button" class="btn btn-default"><p id="give"><img src="maxresdefault (1).jpg" style="height: 41"></p></button>
