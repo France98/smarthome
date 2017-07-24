@@ -26,7 +26,7 @@ $(document).ready(function(){
     });
 
     $('#water').click(function () {
-        var open = "";
+        var open = "1";
         $.ajax({
             url: link + "set/" + open
         }).done(function () {
